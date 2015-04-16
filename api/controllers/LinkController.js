@@ -6,15 +6,15 @@
  */
 
 module.exports = {
-  redirect: function(req,res) {
+  redirect: function(req,res, next) {
     var shorturl = req.params.shorturl;
     Link.findOne({ shorturl: shorturl, active: true }, function(err,link) {
       if(err) {
         sails.error(err);
         res.end(500);
-      } else if(!link)
-      return res.notFound();
-      else {
+      } else if(!link) {
+        next();
+      } else {
         link.hits.add({ip: req.ip});
         link.save(function(err,link) {
           if(err) {
