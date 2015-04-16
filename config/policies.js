@@ -18,24 +18,17 @@
 
 
 module.exports.policies = {
-  '*': [
-    'basicAuth',
-    'passport',
-    'sessionAuth',
-    'ModelPolicy',
-    'AuditPolicy',
-    'OwnerPolicy',
-    'PermissionPolicy',
-    'RolePolicy'
-  ],
-
-  AuthController: {
-    '*': [ 'passport' ]
-  },
+  '*': [ 'passport'],
 
   LinkController: {
+    '*': ['sessionAuth','isActive'],
     'redirect': true
+  },
+
+  HitController: {
+    '*': false
   }
+
   /***************************************************************************
   *                                                                          *
   * Default policy for all controllers and actions (`true` allows public     *

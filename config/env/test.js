@@ -9,7 +9,7 @@ module.exports = {
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
   log: {
-    level: 'silly'
+    level: 'error'
   },
   models: {
      connection: 'localDiskDb',

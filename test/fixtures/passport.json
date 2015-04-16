@@ -1,0 +1,14 @@
+[
+{
+  "user": 1,
+  "provider": "local",
+  "protocol": "local",
+  "password": "testpassword1234"
+},
+{
+  "user": 2,
+  "provider": "local",
+  "protocol": "local",
+  "password": "inactiveUserPassword"
+}
+]
