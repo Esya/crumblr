@@ -41,6 +41,20 @@ describe('LinkModel', function() {
         done();
       });
     });
+
+    it('should use the target as the default name', function (done) {
+      Link.create({
+        target: 'http://www.google.fr',
+        shorturl: null,
+        active: true
+      }).exec(function(err,link) {
+        if(err)
+          throw err;
+
+        link.name.should.be.equal(link.target);
+        done();
+      });
+    });
   });
 
 });

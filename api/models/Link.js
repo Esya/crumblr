@@ -21,10 +21,21 @@ module.exports = {
       type:       'string',
       required:   false
     },
+    'name': {
+      type:       'string',
+      required:   true
+    },
     hits: {
       collection: 'hit',
       via: 'link'
     }
+  },
+  beforeValidate: function(values, next) {
+    if(!values.name || values.name === '') {
+      values.name = values.target;
+    }
+
+    next();
   },
   beforeCreate: function(values, next) {
     if(!values.shorturl) {
