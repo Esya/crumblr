@@ -45,7 +45,7 @@ describe('LinksController', function() {
       .expect(404,done)
     });
 
-    it('should create a hit', function(done) {
+    it('should create a hit and increase the hitcount', function(done) {
       request(sails.hooks.http.app)
       .get('/existing')
       .expect('Location','http://www.google.com')
@@ -58,6 +58,7 @@ describe('LinksController', function() {
             throw err;
           }
 
+          link.hitcount.should.be.equal(1);
           link.hits.length.should.be.equal(1);
           link.hits[0].ip.should.be.equal("127.0.0.1");
           done();

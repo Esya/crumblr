@@ -15,6 +15,7 @@ module.exports = {
       } else if(!link) {
         next();
       } else {
+        link.hitcount++;
         link.hits.add({ip: req.ip});
         link.save(function(err,link) {
           if(err) {

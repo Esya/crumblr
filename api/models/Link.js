@@ -25,6 +25,11 @@ module.exports = {
       type:       'string',
       required:   true
     },
+    'hitcount': {
+      type:       'integer',
+      required:   true,
+      defaultsTo: 0
+    },
     hits: {
       collection: 'hit',
       via: 'link'
