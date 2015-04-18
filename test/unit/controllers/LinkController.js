@@ -1,7 +1,7 @@
 var request = require('supertest');
 var user1;
 
-describe('LinksController', function() {
+describe('LinkController', function() {
   before(function(done) {
     Link.create({
       shorturl: 'existing',
