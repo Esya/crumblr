@@ -25,6 +25,7 @@ module.exports.routes = {
     view: 'index.html'
   },
 
+  'get /me': 'UserController.me',
   'get /login': 'AuthController.login',
   'get /logout': 'AuthController.logout',
   'get /register': 'AuthController.register',

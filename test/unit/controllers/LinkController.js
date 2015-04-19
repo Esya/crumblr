@@ -28,7 +28,7 @@ describe('LinkController', function() {
     it('should require auth', function(done) {
       request(sails.hooks.http.app)
       .post('/link/create?shorturl=abcdef&target=example.com')
-      .expect(403,done)
+      .expect(401,done)
     });
 
     it('should create the link with auth', function(done) {

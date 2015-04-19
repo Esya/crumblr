@@ -18,7 +18,14 @@
 
 
 module.exports.policies = {
-  '*': [ 'passport'],
+  // Everything is restricted by default, unless admin
+  '*': false,
+
+  // Anyone can auth.
+  AuthController: ['passport'],
+  UserController: {
+    'me': ['sessionAuth']
+  },
 
   LinkController: {
     '*': ['sessionAuth','isActive'],
