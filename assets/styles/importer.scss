@@ -14,8 +14,10 @@
  * or any other Grunt tasks you like.)
  */
 @import 'bootstrap';
-body {
-}
+
+@import 'main';
+@import 'login';
+@import 'animation';
 // For example:
 //
 // @import 'foundation.scss';

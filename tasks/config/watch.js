@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 		    tasks: ['sync:dev']
 		},
 		html: {
-			files: ['assets/*.html'],
+			files: ['assets/**/*.html'],
 			options: {
 		      livereload: true,
 		    },
